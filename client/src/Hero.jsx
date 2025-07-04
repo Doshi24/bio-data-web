@@ -5,45 +5,55 @@ function Hero() {
   const [count, setCount] = useState(0)
 
   return (
-<section className="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center px-4 sm:px-8">
-      <div className="text-center max-w-2xl">
+
+    <section className="bg-white py-10 px-4 sm:px-8 md:px-16">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-8">
         
-        {/* Profile Image */}
-        <img
-          src="/profile.jpg"
-          alt="Profile"
-          className="w-36 h-36 sm:w-44 sm:h-44 mx-auto rounded-full border-4 border-blue-600 shadow-md mb-4"
-        />
+        {/* Left Content */}
+        <div>
+          <div className="flex gap-6 text-sm font-semibold text-gray-600 mb-4">
+            <button className="border-b-2 border-pink-500 text-pink-600 pb-1">Get experience</button>
+            <button className="hover:text-pink-600">Find talent</button>
+          </div>
 
-        {/* Name */}
-        <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-2">
-          Monil Doshi
-        </h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+            Get professional<br /> experience in the<br /> real world
+          </h1>
 
-        {/* Short Bio */}
-        <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300 mb-6 px-2">
-          IT Engineer | Modern Approach to Marriage | Tech-Savvy | Family-Oriented
-        </p>
+          <p className="text-gray-600 text-base sm:text-lg mb-6">
+            Apprentice under a mentor and gain new skills,<br />
+            work experience, and industry relationships.<br />
+            Entirely remote. Always free.
+          </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#contact"
-            className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-          >
-            Express Interest
-          </a>
-          <a
-            href="/Monil-Biodata.pdf"
-            className="px-6 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-100 transition"
-            download
-          >
-            Download Biodata
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#"
+              className="bg-pink-500 text-white px-6 py-3 rounded-full text-center text-sm font-semibold hover:bg-pink-600 transition"
+            >
+              Get a mentor
+            </a>
+            <a
+              href="#"
+              className="text-pink-600 text-sm font-semibold hover:underline mt-1 sm:mt-0"
+            >
+              Learn more about getting a mentor →
+            </a>
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="hidden md:block">
+          <img
+            src="/hero-girl.png"
+            alt="Girl smiling with laptop"
+            className="w-full h-auto object-cover rounded-md shadow-lg"
+          />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
 
 export default Hero
