@@ -83,7 +83,7 @@ const About = () => {
         <p>📍 <strong>Currently Residing:</strong> Mumbai, Maharashtra</p>
         <p>⚖️ <strong>Zodiac Sign (Rashi):</strong> सिंह राशि (leo zodiac sign)</p>
         <p>🧬 <strong>Gotra:</strong> Kherju</p>
-        <p>🕉️ <strong>Religion:</strong> 42 DH-Digamber Jain </p>
+        <p>🕉️ <strong>Religion:</strong>Jain 42 DH-Digamber </p>
         <p>🗣️ <strong>Mother Tongue:</strong> Gujarati</p>
         <p>🌿 <strong>Belief:</strong> Embracing simplicity, spirituality, and strong family values.</p>
       </div>
