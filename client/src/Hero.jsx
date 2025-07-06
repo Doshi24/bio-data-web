@@ -55,7 +55,7 @@ function Hero() {
         <div className="text-center md:text-left">
           
           {/* Mobile Image */}
-          <div className="md:hidden flex justify-center mb-6">
+          <div className="md:hidden flex justify-center mb-6 pt-20">
             <img
               src={image}
               alt="Monil Doshi"
