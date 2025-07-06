@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import biodata from './monil_bio_data.pdf';
+import { Instagram, Phone, Mail, MapPin, Globe, MessageCircle } from 'lucide-react';
 
 // Import Heroicons
 import {
@@ -17,6 +20,21 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = () => {
+    if (location.pathname === '/') {
+      // Already on homepage, just scroll
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate to homepage with scroll after load
+      navigate('/?scrollToContact=true');
+    }
+    setIsOpen(false); // close mobile menu if open
+    setDropdownOpen(false);
+  };
 
   return (
     <>
@@ -52,17 +70,17 @@ const Navbar = () => {
               </button>
               {dropdownOpen && (
                 <div className="absolute top-8 left-0 bg-white text-black shadow-md rounded-md py-2 px-4 z-50">
-                  <Link to="/family" className="block py-1 text-sm hover:text-pink-600 flex items-center gap-1">
+                  <Link to="/Family" className="block py-1 text-sm hover:text-pink-600 flex items-center gap-1">
                     <UsersIcon className="h-4 w-4" /> Family
                   </Link>
-                  <Link to="/contact" className="block py-1 text-sm hover:text-pink-600 flex items-center gap-1">
-                    <PhoneIcon className="h-4 w-4" /> Contact
-                  </Link>
+                  <a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-pink-600 flex items-center gap-2">
+                  <PhoneIcon className="h-5 w-5" /> Contact
+                </a>
                 </div>
               )}
             </div>
 
-            <a href="/Monil-Biodata.pdf" download className="hover:text-yellow-300 flex items-center gap-1">
+            <a href= {biodata} target = "_blank" download className="hover:text-yellow-300 flex items-center gap-1">
               <ArrowDownTrayIcon className="h-5 w-5" /> Download
             </a>
           </div>
@@ -101,12 +119,37 @@ const Navbar = () => {
         <Link to="/family" onClick={() => setIsOpen(false)} className="hover:text-pink-600 flex items-center gap-2">
           <UsersIcon className="h-5 w-5" /> Family
         </Link>
-        <Link to="/contact" onClick={() => setIsOpen(false)} className="hover:text-pink-600 flex items-center gap-2">
+        <button
+          onClick={handleContactClick}
+          className="hover:text-pink-600 flex items-center gap-2"
+        >
           <PhoneIcon className="h-5 w-5" /> Contact
-        </Link>
-        <a href="/Monil-Biodata.pdf" download className="hover:text-pink-600 flex items-center gap-2">
-          <ArrowDownTrayIcon className="h-5 w-5" /> Download
+        </button>
+        <a href= {biodata} target = "_blank" download className="hover:text-pink-600 flex items-center gap-2">
+          <ArrowDownTrayIcon className="h-5 w-5" />  Download Bio Data
         </a>
+        <a
+    href="https://wa.me/919221045426?text=Hi%20Monil,%0AI%20would%20like%20to%20connect%20with%20you!"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-green-600 hover:text-green-700 transition"
+    title="WhatsApp"
+  >
+    <MessageCircle className="w-6 h-6" />
+    <span className="text-base sm:text-lg font-medium">Connect on WhatsApp</span>
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/doshiii_mmmonil"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-pink-600 hover:text-pink-700 transition"
+    title="Instagram"
+  >
+    <Instagram className="w-6 h-6" />
+    <span className="text-base sm:text-lg font-medium">Connect on Instagram</span>
+  </a>
       </div>
 
       </div>
