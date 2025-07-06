@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // ✅ import Routes & Route
 import Hero from './Hero';
 import Navbar from './navbar';
-import ScrollToTop from './Scrolltotop';
+import ScrollToTop from './ScrollToTop';
 import About from './About';
 import Family from './Family';
 import './index.css';
