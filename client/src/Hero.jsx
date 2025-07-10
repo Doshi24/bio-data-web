@@ -70,12 +70,13 @@ function Hero() {
           </h1>
 
           {/* Bio */}
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-10">
-            💻 Aspiring IT Engineer | 🧠 Tech Enthusiast<br />
-            💑 Seeking a meaningful life partner.<br />
-            🌱 Passionate about learning, building, and growing.
+         <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-10 text-justify">
+            — someone who believes in genuine connections, quiet strength, and consistent growth. Life has taught me the value of patience, hard work, and staying grounded.
+            <span className="hidden lg:inline">
+            I cherish deep bonds, meaningful conversations, and the small joys of everyday moments.
+            </span>
           </p>
-          {/* Buttons - aligned side by side */}
+         {/* Buttons - aligned side by side */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start items-center sm:items-center">
             <a
               href= {biodata}
